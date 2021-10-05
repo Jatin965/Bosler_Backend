@@ -1,0 +1,47 @@
+bosler:
+  secret: passportSecret
+server:
+  error:
+    include-message: always
+    include-binding-errors: always
+    include-exception: false
+    include-stacktrace: never
+#  ssl:
+#    key-store: classpath:springboot.p12
+#    key-store-password: shalimar
+#    key-store-type: pkcs12
+#    key-alias: springboot
+#    key-password: shalimar
+#  port: 8443
+spring:
+  datasource:
+    initialization-mode: always
+    platform: postgres
+    username: ${DB_USERNAME}
+    password: ${DB_PASSWORD}
+    url: jdbc:postgresql://${DB_HOST}:${DB_PORT}/boson
+  jpa:
+    generate-ddl: true
+    hibernate:
+      ddl-auto: create-drop
+    show-sql: true
+#  main:
+#    allow-bean-definition-overriding: true
+  security:
+    oauth2:
+      client:
+        registration:
+          github:
+            clientId: Iv1.c274b0ad4bf059dd
+            clientSecret: 7404cd78583913586cb66bbd158a8c2a89c17800
+  servlet:
+    multipart:
+      enabled: true
+      file-size-threshold: 2KB
+      max-file-size: 500MB
+      max-request-size: 515MB
+
+file:
+  upload-dir=/Users/rakeshmalik/bosler/uploads
+
+
